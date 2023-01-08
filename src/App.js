@@ -9,6 +9,7 @@ import LoginForm from "./components/LoginForm";
 import ProtectedRoute from "./components/ProtectedRoute";
 import SavedVideos from "./components/SavedVideos";
 import NotFound from "./components/NotFound";
+import NoInternet from "./components/NoInternet";
 
 import { useState, useEffect } from "react";
 
@@ -35,24 +36,26 @@ function App() {
     setUpdatedArray(filteredArr);
   }, [savedVideosList]);
   return (
-    <BrowserRouter>
-      <SavedVideosContext.Provider
-        value={{ savedVideosList, addToSavedVideos, updatedArray }}
-      >
-        <Routes>
-          <Route path="/login" element={<LoginForm />} />
-          <Route element={<ProtectedRoute />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/gaming" element={<Gaming />} />
-            <Route path="/trending" element={<Trending />} />
-            <Route path="/saved-videos" element={<SavedVideos />} />
-            <Route path="/video/:id" element={<VideoItemDetailsRoute />} />
-            <Route path="/not-found" element={<NotFound />} />
-            <Route path="*" element={<Navigate to="/not-found" />} />
-          </Route>
-        </Routes>
-      </SavedVideosContext.Provider>
-    </BrowserRouter>
+    <NoInternet>
+      <BrowserRouter>
+        <SavedVideosContext.Provider
+          value={{ savedVideosList, addToSavedVideos, updatedArray }}
+        >
+          <Routes>
+            <Route path="/login" element={<LoginForm />} />
+            <Route element={<ProtectedRoute />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/gaming" element={<Gaming />} />
+              <Route path="/trending" element={<Trending />} />
+              <Route path="/saved-videos" element={<SavedVideos />} />
+              <Route path="/video/:id" element={<VideoItemDetailsRoute />} />
+              <Route path="/not-found" element={<NotFound />} />
+              <Route path="*" element={<Navigate to="/not-found" />} />
+            </Route>
+          </Routes>
+        </SavedVideosContext.Provider>
+      </BrowserRouter>
+    </NoInternet>
   );
 }
 
