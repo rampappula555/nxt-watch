@@ -1,0 +1,33 @@
+.logo-and-form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+.border-container {
+  box-shadow: 0px 4px 16px 0px #bfbfbf;
+  padding: 50px;
+}
+.nxtwatch-logo {
+  width: 160px;
+}
+.logo-container {
+  margin-bottom: 15px;
+}
+.password-label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.login-button-container {
+  margin-top: 15px;
+}
+.login-button {
+  padding: 4px;
+  width: 170px;
+}
+.error-message {
+  color: red;
+  font-size: small;
+  width: 190px;
+}

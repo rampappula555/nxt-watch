@@ -1,0 +1,7 @@
+.no-search-results-image {
+  width: 300px;
+}
+.videos-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}

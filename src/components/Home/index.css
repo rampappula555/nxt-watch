@@ -1,0 +1,13 @@
+.links-and-videos-section-container {
+  display: flex;
+  width: 100%;
+}
+.home-main-container {
+  width: 100vw;
+}
+.links-container {
+  flex: 1;
+}
+.search-and-video-viewer-container {
+  flex: 4;
+}
